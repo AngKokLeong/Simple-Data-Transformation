@@ -1,4 +1,6 @@
 data/__pycache__
-file/__pycache__
+files/__pycache__
 entity/__pycache__
 interface/__pycache__
+service/__pycache__
+__pycache__
