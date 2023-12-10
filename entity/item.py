@@ -10,4 +10,3 @@ class Item:
         self.item_name = item_name
         self.price = price
         self.quantity = quantity
-            
