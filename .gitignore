@@ -4,3 +4,4 @@ entity/__pycache__
 interface/__pycache__
 service/__pycache__
 __pycache__
+json_output_file
