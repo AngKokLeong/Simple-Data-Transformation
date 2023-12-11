@@ -2,8 +2,8 @@
 class File_Processor:
 
 
-    def read_file() -> object:
+    def read_file(self) -> object:
         pass
 
-    def generate_file(data: object) -> None:
+    def generate_file(self, data: object) -> None:
         pass

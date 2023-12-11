@@ -16,3 +16,4 @@ class Order:
         self.item_lines = item_lines
         self.total_price = total_price
         self.unique_items = unique_items
+
