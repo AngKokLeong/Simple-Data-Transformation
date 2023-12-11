@@ -16,9 +16,3 @@ class Order:
         self.item_lines = item_lines
         self.total_price = total_price
         self.unique_items = unique_items
-
-    def calculate_total_price(self) -> float:
-        pass
-
-    def calculate_number_of_unique_items(self) -> int:
-        pass
