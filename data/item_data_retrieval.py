@@ -13,12 +13,8 @@ class Item_Data_Retrieval(Endpoint_Data_Retrieval):
             response_json_result = response_result.json()
             
             new_item: Item = Item(response_json_result["id"], response_json_result["title"], response_json_result["price"], 0);
-
-            print(new_item.item_id)
-            print(new_item.item_name)
-            print(new_item.price)
-            #new_item = json.load(response_json_result)
-
+            
+            return new_item
         
         except requests.ConnectionError:
             print("There is a connection error.")
