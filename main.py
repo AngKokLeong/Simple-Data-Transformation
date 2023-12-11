@@ -6,8 +6,8 @@ def main():
     #Data_Transformation_Driver.execute()
 
     file_processor: File_Processor = CSV_File_Processor()
-    file_processor.read_file()
-
+    data = file_processor.read_file()
+    print(data)
 
 
 
