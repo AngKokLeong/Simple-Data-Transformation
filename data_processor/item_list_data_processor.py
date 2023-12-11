@@ -8,9 +8,10 @@ class Item_List_Data_Processor(Data_Processor):
     item_data_processor: Data_Processor = Item_Data_Processor()
 
     def process_data(self, item_data_dict: dict) -> list[Item]:
-        
-        for data in item_data_dict.values():
+        self.item_list = []
 
+        for data in item_data_dict.values():
+            
             self.item_list.append(self.__create_item_object_with_csv_data_and_fake_store_api_data(data["data"], self.__create_item_object_from_csv_data(data)))
 
         return self.item_list
