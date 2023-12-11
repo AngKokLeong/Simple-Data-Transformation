@@ -1,17 +1,28 @@
-from interface.file_processor import File_Processor
-from files.json_file_processor import JSON_File_Processor
-from entity.order import Order
+from interface.data_processor import Data_Processor
+from data_processor.item_data_processor import Item_Data_Processor
+from entity.item import Item
+
+from interface.endpoint_data_retrieval import Endpoint_Data_Retrieval
+from data.item_data_retrieval import Item_Data_Retrieval
 
 def main():
     #Data_Transformation_Driver.execute()
 
-    order_data: Order = Order('456789', 'asdasd', '123456', [], 56, 3)
+    endpoint_data_retrieval: Endpoint_Data_Retrieval = Item_Data_Retrieval()
 
 
-    file_processor: File_Processor = JSON_File_Processor()
-    file_processor.generate_file(order_data)
+    item_object_from_csv: Item = Item("17", "", "", 3)
+    item_object_from_fakestoreapi: Item = endpoint_data_retrieval.retrieve_data(item_object_from_csv.item_id)
 
 
+    data_processor: Data_Processor = Item_Data_Processor()
+
+    result:Item = data_processor.merge_data(item_object_from_csv, item_object_from_fakestoreapi)
+
+    print(result.item_id)
+    print(result.item_name)
+    print(result.price)
+    print(result.quantity)
 
 
 if __name__ == "__main__":
