@@ -18,6 +18,8 @@ class Order_Data_Processor(Data_Processor):
 
         order_data_object.item_lines = self.item_list_data_processor.process_data(self.data_storage)
 
+        
+
         order_data_object.total_price = self.__calculate_total_price_of_ordered_amount(order_data_object)
         order_data_object.unique_items = self.__calculate_number_of_unique_items(order_data_object)
 
