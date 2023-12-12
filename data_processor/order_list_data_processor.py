@@ -2,15 +2,23 @@ from interface.data_processor import Data_Processor
 from data_processor.order_data_processor import Order_Data_Processor
 import multiprocessing
 from entity.order import Order
-
+import json
 
 class Order_List_Data_Processor(Data_Processor):
-    csv_data_dictionary: dict = {}
-    grouped_order_number_data_dictionary: dict = {}
-    unique_order_number_dict: dict = {}
-    order_dict: dict = {}
+    csv_data_dictionary: dict
+    grouped_order_number_data_dictionary: dict
+    unique_order_number_dict: dict
+    order_dict: dict
 
-    order_data_processor: Data_Processor = Order_Data_Processor()
+    order_data_processor: Data_Processor
+
+    def __init__(self):
+        self.csv_data_dictionary = {}
+        self.grouped_order_number_data_dictionary = {}
+        self.unique_order_number_dict = {}
+        self.order_dict = {}
+
+        self.order_data_processor = Order_Data_Processor()
 
     
     def process_data(self, csv_data_dictionary: dict) -> dict:
@@ -37,7 +45,7 @@ class Order_List_Data_Processor(Data_Processor):
             order_data_object: Order = self.order_data_processor.process_data(dictionary)
             
             self.order_dict[order_data_object.order_number] = order_data_object
-
+        
 
     # group data that are relevant to one order_number
 
