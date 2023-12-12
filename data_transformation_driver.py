@@ -1,8 +1,11 @@
+from controller.order_controller import Order_Controller
+
 class Data_Transformation_Driver:
 
+    order_controller: Order_Controller
 
     def __init__(self):
-        pass
+        self.order_controller = Order_Controller()
 
-    def execute():
-        pass
+    def execute(self):
+        self.order_controller.generate_json()
