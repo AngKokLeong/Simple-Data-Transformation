@@ -1,4 +1,4 @@
-from service.data_builder import Data_Builder
+from data_builder.data_builder import Data_Builder
 
 class Data_Manager(object):
 
