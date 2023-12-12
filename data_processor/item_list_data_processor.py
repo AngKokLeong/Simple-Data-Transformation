@@ -13,7 +13,7 @@ class Item_List_Data_Processor(Data_Processor):
         for data in item_data_dict.values():
             
             self.item_list.append(self.__create_item_object_with_csv_data_and_fake_store_api_data(data["data"], self.__create_item_object_from_csv_data(data)))
-
+            
         return self.item_list
 
     def __create_item_object_with_csv_data_and_fake_store_api_data(self, item_id: str, item_data_object: Item) -> Item:
@@ -23,6 +23,6 @@ class Item_List_Data_Processor(Data_Processor):
 
     def __create_item_object_from_csv_data(self, item_data: dict) -> Item:
         if item_data != None:
-            return Item(item_data["data"], "", 0.0, item_data["data_two"])
+            return Item(str(item_data["data"]).strip(), "", 0.0, int(item_data["data_two"]))
         
         return None
