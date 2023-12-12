@@ -1,5 +1,5 @@
 
-class File_Processor:
+class File_Processor(object):
 
 
     def read_file(self) -> object:

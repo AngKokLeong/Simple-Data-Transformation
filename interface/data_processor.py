@@ -1,5 +1,5 @@
 
-class Data_Processor:
+class Data_Processor(object):
 
     def merge_data(self, data_object_one: object, data_object_two: object) -> object:
         pass
