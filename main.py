@@ -1,7 +1,4 @@
-from interface.data_processor import Data_Processor
-from data_processor.order_list_data_processor import Order_List_Data_Processor
-from interface.file_processor import File_Processor
-from files.csv_file_processor import CSV_File_Processor
+from service.data_builder import Data_Builder
 from entity.item import Item
 from entity.order import Order
 
@@ -9,11 +6,8 @@ from entity.order import Order
 def main():
     #Data_Transformation_Driver.execute()
 
-    order_line_data_processor: Data_Processor = Order_List_Data_Processor()
-    csv_file_processor: File_Processor = CSV_File_Processor()
-    order_data_from_csv: dict = csv_file_processor.read_file()
-    
-    order_data_object_dict: dict = order_line_data_processor.process_data(order_data_from_csv)
+    data_builder: Data_Builder = Data_Builder()
+    order_data_object_dict: dict = data_builder.build()
 
 
     for key, order_data in order_data_object_dict.items():
