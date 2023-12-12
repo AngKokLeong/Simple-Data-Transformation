@@ -1,9 +1,10 @@
-from service.data_manager import Data_Manager
+from controller.order_controller import Order_Controller
+
 
 def main():
 
-    data_manager: Data_Manager = Data_Manager()
-    data_manager.generate_json()
+    order_controller: Order_Controller = Order_Controller()
+    order_controller.generate_json()
 
 
 
